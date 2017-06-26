@@ -1,0 +1,59 @@
+﻿<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="Content/bootstrap.css" />
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+	<script src="scripts/iframeScript.js"></script>
+
+	<script>
+        function login() {
+            window.parent.location.href = "Login.html";
+        }
+        function Register() {
+            window.parent.location.href = "Register.html";
+        }
+
+        function Single() {
+            window.parent.location.href = "Single.html";
+        }
+        function Maze() {
+            window.parent.location.href = "MainMenu.html";
+        }
+        function Settings() {
+            window.parent.location.href = "settings.html";
+        }
+        function multi() {
+            if (sessionStorage.getItem("username") != null) {
+                window.parent.location.href = "MultiPlayer.html";
+            }
+            else {
+                window.parent.location.href = "Login.html";
+            }
+        }
+        function logout() {
+            sessionStorage.removeItem("username");
+            window.parent.location.href = "MainMenu.html";
+        }
+        function Ranking() {
+            window.parent.location.href = "UserRank.html";
+        }
+	</script>
+</head>
+<body>
+	<div id="navbar" class="navbar-collapse collapse">
+		<ul class="nav navbar-nav">
+			<li><a><span style="cursor:pointer" onclick="Maze()">Maze</span></a></li>
+			<li><a><span style="cursor:pointer" onclick="Single()">Single Game</span></a></li>
+			<li><a><span style="cursor:pointer" onclick="multi()">MultiplayerGame</span></a></li>
+			<li><a><span style="cursor:pointer" onclick="Settings()">Settings</span></a></li>
+			<li><a><span style="cursor:pointer" onclick="Ranking()">User Ranking</span></a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li id="registerId" name="registerId"><a><span style="cursor:pointer" onclick="Register()">Register</span></a></li>
+			<li id="loginId"><a><span style="cursor:pointer" onclick="login()">Login</span></a></li>
+
+			<li><a id="userId"></a></li>
+			<li id="logoutId" class="logoutId"><a><span style="cursor:pointer" onclick="logout()">Logout</span></a></li>
+		</ul>
+	</div>
+</body>
+</html>

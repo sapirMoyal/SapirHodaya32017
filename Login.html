@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Login</title>
+	<meta charset="utf-8" />
+	<style>
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 15%;
+			border: 0;
+			overflow: hidden;
+		}
+
+		.container {
+			position: absolute;
+			top: 15%;
+			left: 0;
+			width: 20%;
+			height: 85%;
+		}
+	</style>
+
+</head>
+<body>
+	<iframe src="HtmlPage1.html"></iframe>
+	<div class="container">
+
+		<h1 class="form-signin-heading">Log in</h1>
+		<h3>Use a  local account to log in</h3>
+		<label for="name" class="sr-only">Username</label>
+		<input type="text" id="name" class="form-control" placeholder="Name" required="" autofocus="">
+		<br />
+		<label for="inputPassword" class="sr-only">Password</label>
+		<input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+		<div class="checkbox">
+
+		</div>
+		<button id="btnConnect" class="btn btn-lg btn-primary btn-block" onclick="trylogin()" type="submit">Sign in</button>
+
+		<a href="Register.html">register as a new client</a>
+	</div> <!-- /container -->
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+
+
+
+	<script>
+
+
+		//$.connection.hub.start().done(function () {
+		//    $('#btnConnect').click(function () {
+		//        var username = $('#name').val();
+		//        multiHub.server.connect(username);
+		//    })
+		//})
+		function trylogin() {
+		
+			var name = $('#name').val();
+			var uri = '/api/Users';
+			var password = $('#inputPassword').val();
+			$.getJSON(uri + "/" + name + "/" + password).done(function (mess) {
+				if (mess == "connected") {
+					sessionStorage.setItem("username", name);
+				}
+				else {
+					alert(mess);
+				}
+			});
+		
+		}
+	</script>
+</body>
+</html>

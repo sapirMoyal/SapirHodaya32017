@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="scripts/RegisterScript.js"></script>
+
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+	<meta charset="utf-8" />
+	<style>
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 15%;
+			border: 0;
+			overflow: hidden;
+		}
+
+		.container {
+			position: absolute;
+			top: 15%;
+			left: 0;
+			width: 20%;
+			height: 85%;
+		}
+	</style>
+
+</head>
+<body>
+	<iframe src="HtmlPage1.html"></iframe>
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h2 class="panel-title">Register</h2>
+			</div>
+			<div class="panel-body">
+				<div class="form-group" data-bind="with:newUser">
+					<label for="inputTitle" class="col-sm-2control-label">Username</label>
+					<div class="col-sm-10">
+						<input type="text" class="formcontrol"
+							   id="inputUsername" data-bind="value:Username" />
+					</div>
+					<label for="inputYear" class="col-sm-2control-label">password</label>
+					<div class="col-sm-10">
+						<input type="password" class="formcontrol"
+							   id="inputpassword" data-bind="value:password" />
+					</div>
+					<label for="inputGenre" class="col-sm-2control-label">password2</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control"
+							   id="inputpassword2" data-bind="value:password2" />
+					</div>
+					<label for="inputPrice" class="col-sm-2control-label">Email</label>
+					<div class="col-sm-10">
+						<input type="email" step="any"
+							   class="form-control" id="inputEmail" data-bind="value:Email" />
+					</div>
+				</div>
+				<button type="submit" class="btn btndefault" onclick="sub()">Submit</button>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
