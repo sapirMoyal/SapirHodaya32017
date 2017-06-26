@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7906FCFD-72E9-4E38-803C-CAAD9CDB7D5A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ex2_</RootNamespace>
+    <AssemblyName>ex2_</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\HeartButton.xaml.cs">
+      <DependentUpon>HeartButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\Maze.xaml.cs">
+      <DependentUpon>Maze.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\MazeOpponent.xaml.cs">
+      <DependentUpon>MazeOpponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\MyButton.xaml.cs">
+      <DependentUpon>MyButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConvertFromJson.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="GameMenu.xaml.cs">
+      <DependentUpon>GameMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ICommuntable.cs" />
+    <Compile Include="IModelable.cs" />
+    <Compile Include="LoseCon.xaml.cs">
+      <DependentUpon>LoseCon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoseWindow.xaml.cs">
+      <DependentUpon>LoseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model.cs" />
+    <Compile Include="Multiplayer.xaml.cs">
+      <DependentUpon>Multiplayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pair.cs" />
+    <Compile Include="Play.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceiveAns.cs" />
+    <Compile Include="SendAns.cs" />
+    <Compile Include="Setting.xaml.cs">
+      <DependentUpon>Setting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SingelGame.xaml.cs">
+      <DependentUpon>SingelGame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SingleMaze.cs" />
+    <Compile Include="TCPClient.cs" />
+    <Compile Include="ViewModel.cs" />
+    <Compile Include="Warning.xaml.cs">
+      <DependentUpon>Warning.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wining.xaml.cs">
+      <DependentUpon>Wining.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="controls\bride4.png" />
+    <Content Include="controls\endMaze.png" />
+    <Content Include="controls\groom4.png" />
+    <Content Include="controls\hearts.jpg" />
+    <Content Include="controls\hupa2.jpg" />
+    <Content Include="controls\hupa3.jpg" />
+    <Content Include="controls\runMan.png" />
+    <Content Include="couple2.gif" />
+    <Content Include="favicon.ico" />
+    <Content Include="GameMenu.jpg" />
+    <Content Include="groomRun.jpg" />
+    <Content Include="stam.jpg" />
+    <Content Include="waiting.jpg" />
+    <Content Include="weddingMaze.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="controls\HeartButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="controls\Maze.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="controls\MazeOpponent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="controls\MyButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GameMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LoseCon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LoseWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Multiplayer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Setting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SingelGame.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Warning.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wining.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
